@@ -76,10 +76,7 @@ class ViewController: UIViewController , UITableViewDelegate, UITableViewDataSou
         if segue.identifier == "infoVC"{
             if let informationVC = segue.destinationViewController as? infoVC{
                 if let movie = sender as? Movies{
-                    informationVC.name = movie.title
-                    informationVC.name = movie.movieDesc
-                    informationVC.name = movie.plotImdb
-                    informationVC.name = movie.url
+                        informationVC.movie = movie
                 }
             }
         }
