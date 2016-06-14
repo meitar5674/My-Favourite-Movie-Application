@@ -13,6 +13,7 @@ class ViewController: UIViewController , UITableViewDelegate, UITableViewDataSou
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var container: UIView!
     @IBOutlet weak var image: UIImage!
+    
     var webView: WKWebView!
     
     
@@ -64,11 +65,26 @@ class ViewController: UIViewController , UITableViewDelegate, UITableViewDataSou
     }
 
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        performSegueWithIdentifier("infoVC", sender: nil)
+        performSegueWithIdentifier("infoVC", sender: DataService.instance.loadedMovies[indexPath.row])
     }
     
     func onMoviesLoaded(notif: AnyObject){
         tableView.reloadData()
     }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "infoVC"{
+            if let informationVC = segue.destinationViewController as? infoVC{
+                if let movie = sender as? Movies{
+                    informationVC.name = movie.title
+                    informationVC.name = movie.movieDesc
+                    informationVC.name = movie.plotImdb
+                    informationVC.name = movie.url
+                }
+            }
+        }
+    }
+    
+    
     
 }

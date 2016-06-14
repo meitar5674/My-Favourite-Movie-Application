@@ -13,7 +13,6 @@ class MoviesCell: UITableViewCell {
     @IBOutlet weak var movieImg: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var descLabel: UILabel!
-    @IBOutlet weak var urlLabel: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -26,7 +25,6 @@ class MoviesCell: UITableViewCell {
     func configureCell(movie: Movies){
         titleLabel.text = movie.title
         descLabel.text = movie.movieDesc
-        urlLabel.text = movie.url
         movieImg.image = DataService.instance.imageForPath(movie.imagePath)
     }
 

@@ -10,24 +10,34 @@ import UIKit
 
 class infoVC: UIViewController {
     
-    @IBOutlet weak var label: UILabel!
+    
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var movieName: UILabel!
+    @IBOutlet weak var movieDescription: UILabel!
+    @IBOutlet weak var linkToImdb: UILabel!
+    @IBOutlet weak var plotByImdb: UILabel!
+    
+    var movie: Movies!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        label.userInteractionEnabled = true
-        let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(infoVC.labelFunc))
-        label.addGestureRecognizer(gestureRecognizer)
-    }
-
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+  
     }
     
-    func labelFunc(){
-        label.text = "moo"
-        print("moo")
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        loadPage(movie)
     }
+    
+    
+    func loadPage(movie: Movies){
+        movieName.text = movie.title
+        movieDescription.text = movie.movieDesc
+        linkToImdb.text = movie.url
+        plotByImdb.text = movie.plotImdb
+    }
+    
+    
+
 
 }
