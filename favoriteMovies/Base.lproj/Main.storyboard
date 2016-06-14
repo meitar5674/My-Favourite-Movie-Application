@@ -346,7 +346,7 @@
                         <outlet property="imdbPlotDescription" destination="ppO-QJ-jdw" id="FZ1-Zm-R7h"/>
                         <outlet property="movieImage" destination="mlJ-44-CZt" id="GaU-Bt-KGO"/>
                         <outlet property="titleField" destination="usT-RU-ZUt" id="2Qt-Ia-teN"/>
-                        <outlet property="urlField" destination="ppO-QJ-jdw" id="1v5-NL-lrA"/>
+                        <outlet property="urlField" destination="SMy-a7-DFH" id="5js-Gw-hWK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qzi-AM-2qs" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -454,7 +454,7 @@
                                     <constraint firstAttribute="width" constant="250" id="hev-RG-bsd"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="movieName" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ecU-28-x7N">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="movieName" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="ecU-28-x7N">
                                 <rect key="frame" x="20" y="373" width="560" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="doC-dX-dtN"/>
@@ -463,7 +463,7 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Link to Imdb" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K0M-Av-1I1">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Link to Imdb" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="K0M-Av-1I1">
                                 <rect key="frame" x="20" y="431" width="560" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="qMP-3B-Ukj"/>
@@ -472,13 +472,13 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Plot" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lAL-Jd-xRQ">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Plot" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="lAL-Jd-xRQ">
                                 <rect key="frame" x="20" y="460" width="560" height="120"/>
                                 <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="movieDescription" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UrK-pg-8lB">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="movieDescription" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="UrK-pg-8lB">
                                 <rect key="frame" x="20" y="402" width="560" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="nNf-CM-q3V"/>
@@ -517,11 +517,11 @@
                         <outlet property="BackToMain" destination="3di-CY-sgW" id="Eju-7A-SdC"/>
                         <outlet property="closeUrl" destination="shA-z7-B9f" id="lnc-8Z-ivc"/>
                         <outlet property="container" destination="cmC-0V-8fv" id="MH5-ka-gp5"/>
-                        <outlet property="imageView" destination="1fW-5J-y7n" id="bX3-SW-ZUI"/>
-                        <outlet property="linkToImdb" destination="K0M-Av-1I1" id="4zb-az-vgH"/>
-                        <outlet property="movieDescription" destination="UrK-pg-8lB" id="Rz8-Hg-lF3"/>
-                        <outlet property="movieName" destination="ecU-28-x7N" id="kg5-Vu-Yox"/>
-                        <outlet property="plotByImdb" destination="lAL-Jd-xRQ" id="B6f-J0-Kzp"/>
+                        <outlet property="imageView" destination="1fW-5J-y7n" id="cFw-zC-HZN"/>
+                        <outlet property="linkToImdb" destination="K0M-Av-1I1" id="4qe-yv-DTg"/>
+                        <outlet property="movieDescription" destination="UrK-pg-8lB" id="uMX-Jo-skl"/>
+                        <outlet property="movieName" destination="ecU-28-x7N" id="nO9-tO-kIa"/>
+                        <outlet property="plotByImdb" destination="lAL-Jd-xRQ" id="jN2-xX-AfQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gTm-wm-CCy" userLabel="First Responder" sceneMemberID="firstResponder"/>

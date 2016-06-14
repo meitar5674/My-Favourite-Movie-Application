@@ -30,13 +30,14 @@ class infoVC: UIViewController {
         super.viewDidLoad()
         imageView.layer.cornerRadius = imageView.frame.size.width / 2
         imageView.clipsToBounds = true
+        
+        
         webView  = WKWebView()
         container.addSubview(webView)
         
         linkToImdb.userInteractionEnabled = true
         let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(infoVC.linkFunc))
         linkToImdb.addGestureRecognizer(gestureRecognizer)
-        
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -49,9 +50,13 @@ class infoVC: UIViewController {
     func loadPage(movie: Movies){
         imageView.image = DataService.instance.imageForPath(movie.imagePath)
         movieName.text = movie.title
+        print(movieName.text)
         movieDescription.text = movie.movieDesc
+         print(movieDescription.text)
         linkToImdb.text = movie.url
+         print(linkToImdb.text)
         plotByImdb.text = movie.plotImdb
+         print(plotByImdb.text)
     }
     
     func linkFunc(){
@@ -60,9 +65,8 @@ class infoVC: UIViewController {
         closeUrl.hidden = false
         let frame = CGRectMake(0, 0, container.bounds.width, container.bounds.height)
         webView.frame = frame
-        let url = NSURL(string: linkToImdb.text!)!
-        let request = NSURLRequest(URL: url)
-        webView.loadRequest(request)
+       loadRequest(linkToImdb.text!)
+        
         
     }
 
@@ -75,5 +79,12 @@ class infoVC: UIViewController {
         BackToMain.hidden = false
         closeUrl.hidden = true
     }
+    
+    func loadRequest(urlStr: String){
+        let url = NSURL(string: urlStr)!
+        let urlRequest = NSURLRequest(URL: url)
+        webView.loadRequest(urlRequest)
+    }
+
 
 }
