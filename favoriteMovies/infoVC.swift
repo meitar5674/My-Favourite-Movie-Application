@@ -23,7 +23,7 @@ class infoVC: UIViewController {
   
     
     var movie: Movies!
-    var webView: WKWebView!
+    var webView =  WKWebView()
 
     
     override func viewDidLoad() {
@@ -32,9 +32,7 @@ class infoVC: UIViewController {
         imageView.clipsToBounds = true
         
         
-        webView  = WKWebView()
         container.addSubview(webView)
-        
         linkToImdb.userInteractionEnabled = true
         let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(infoVC.linkFunc))
         linkToImdb.addGestureRecognizer(gestureRecognizer)
