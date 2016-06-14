@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A96E07CA1D0F805B007D8369 /* infoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96E07C91D0F805B007D8369 /* infoVC.swift */; };
 		A9FCF3E31D0F4AC000878A7C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9FCF3E21D0F4AC000878A7C /* AppDelegate.swift */; };
 		A9FCF3E51D0F4AC000878A7C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9FCF3E41D0F4AC000878A7C /* ViewController.swift */; };
 		A9FCF3E81D0F4AC000878A7C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9FCF3E61D0F4AC000878A7C /* Main.storyboard */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A96E07C91D0F805B007D8369 /* infoVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = infoVC.swift; sourceTree = "<group>"; };
 		A9FCF3DF1D0F4AC000878A7C /* favoriteMovies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = favoriteMovies.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9FCF3E21D0F4AC000878A7C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A9FCF3E41D0F4AC000878A7C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 			children = (
 				A9FCF3E41D0F4AC000878A7C /* ViewController.swift */,
 				A9FCF3FB1D0F5EA000878A7C /* AddMovieVC.swift */,
+				A96E07C91D0F805B007D8369 /* infoVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -182,6 +185,7 @@
 				A9FCF3E51D0F4AC000878A7C /* ViewController.swift in Sources */,
 				A9FCF3FC1D0F5EA000878A7C /* AddMovieVC.swift in Sources */,
 				A9FCF3E31D0F4AC000878A7C /* AppDelegate.swift in Sources */,
+				A96E07CA1D0F805B007D8369 /* infoVC.swift in Sources */,
 				A9FCF3FF1D0F6A0600878A7C /* DataService.swift in Sources */,
 				A9FCF3F91D0F538200878A7C /* MoviesCell.swift in Sources */,
 				A9FCF3F61D0F4B1800878A7C /* Movies.swift in Sources */,

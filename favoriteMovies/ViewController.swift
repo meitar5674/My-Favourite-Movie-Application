@@ -7,20 +7,35 @@
 //
 
 import UIKit
-
+import WebKit
 class ViewController: UIViewController , UITableViewDelegate, UITableViewDataSource{
 
     @IBOutlet weak var tableView: UITableView!
-    
+    @IBOutlet weak var container: UIView!
+    @IBOutlet weak var image: UIImage!
+    var webView: WKWebView!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        webView  = WKWebView()
+        container.addSubview(webView)
         tableView.delegate = self
         tableView.dataSource = self
         DataService.instance.loadMovies()
       NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ViewController.onMoviesLoaded(_:)), name: "moviesLoaded", object: nil)
         
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        let frame = CGRectMake(0, 0, container.bounds.width, container.bounds.height)
+        webView.frame = frame
+        
+        let urlStr = "https://www.youtube.com/watch?v=zTIfBXxgfrk"
+        let url = NSURL(string: urlStr)!
+        let request = NSURLRequest(URL: url)
+        
+        webView.loadRequest(request)
     }
 
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -49,13 +64,11 @@ class ViewController: UIViewController , UITableViewDelegate, UITableViewDataSou
     }
 
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        
+        performSegueWithIdentifier("infoVC", sender: nil)
     }
     
     func onMoviesLoaded(notif: AnyObject){
         tableView.reloadData()
     }
     
-    
 }
-

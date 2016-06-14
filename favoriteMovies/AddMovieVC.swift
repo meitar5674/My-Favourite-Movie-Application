@@ -28,6 +28,9 @@ class AddMovieVC: UIViewController , UIImagePickerControllerDelegate, UINavigati
 
         imagePicker = UIImagePickerController()
         imagePicker.delegate = self
+        
+        let tap = UITapGestureRecognizer(target: self, action: Selector("TapFunction"))
+        urlField.addGestureRecognizer(tap)
     }
 
 
@@ -39,6 +42,7 @@ class AddMovieVC: UIViewController , UIImagePickerControllerDelegate, UINavigati
             let movie = Movies(imagePath: imgPath, title: title, description: desc, url: url, plot: plot)
             DataService.instance.addMovie(movie)
         }
+        dismissViewControllerAnimated(true, completion: nil)
     }
     
     @IBAction func cancelButtonPressed(sender: AnyObject) {
@@ -53,6 +57,10 @@ class AddMovieVC: UIViewController , UIImagePickerControllerDelegate, UINavigati
     func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage, editingInfo: [String : AnyObject]?) {
         imagePicker.dismissViewControllerAnimated(true, completion: nil)
         movieImage.image = image
+    }
+    
+    func TapFunction(){
+        print("Tap was made")
     }
 
 }

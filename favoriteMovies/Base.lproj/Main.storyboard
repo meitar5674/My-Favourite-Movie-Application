@@ -63,7 +63,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="560" height="111"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dino" translatesAutoresizingMaskIntoConstraints="NO" id="Cp9-0c-hPI">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="Cp9-0c-hPI">
                                                     <rect key="frame" x="8" y="8" width="90" height="90"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="90" id="1vN-mL-3zD"/>
@@ -120,7 +120,7 @@
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Link:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="0hW-bA-gN7">
+                                                <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Link:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="0hW-bA-gN7">
                                                     <rect key="frame" x="151" y="76" width="401" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="foS-J5-BP9"/>
@@ -158,10 +158,15 @@
                                             <outlet property="movieImg" destination="Cp9-0c-hPI" id="7x7-Ep-Bc1"/>
                                             <outlet property="titleLabel" destination="hBC-f0-AZ4" id="HYw-a2-tkf"/>
                                             <outlet property="urlLabel" destination="0hW-bA-gN7" id="EA9-cB-gWM"/>
+                                            <segue destination="Yq0-vb-Owe" kind="show" identifier="infoVC" id="PFS-ii-Yn8"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9U5-Ek-rxT">
+                                <rect key="frame" x="0.0" y="80" width="600" height="520"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -175,6 +180,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="container" destination="9U5-Ek-rxT" id="ygX-LP-d4E"/>
                         <outlet property="tableView" destination="thT-hy-5Hb" id="Wq0-zZ-eaD"/>
                     </connections>
                 </viewController>
@@ -366,9 +372,45 @@
             </objects>
             <point key="canvasLocation" x="982" y="399"/>
         </scene>
+        <!--InfoVC-->
+        <scene sceneID="5J3-y3-s2q">
+            <objects>
+                <viewController id="Yq0-vb-Owe" customClass="infoVC" customModule="favoriteMovies" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="OQk-zQ-UJ3"/>
+                        <viewControllerLayoutGuide type="bottom" id="WZb-rc-Lqg"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="qvz-Z5-wWy">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qtf-ng-T2a">
+                                <rect key="frame" x="279" y="289" width="42" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="P74-wb-PQe"/>
+                                    <constraint firstAttribute="width" constant="42" id="VyQ-sG-r7S"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="qtf-ng-T2a" firstAttribute="centerX" secondItem="qvz-Z5-wWy" secondAttribute="centerX" id="1yX-ZV-Xfa"/>
+                            <constraint firstItem="qtf-ng-T2a" firstAttribute="centerY" secondItem="qvz-Z5-wWy" secondAttribute="centerY" id="jU9-xJ-HeY"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="label" destination="qtf-ng-T2a" id="8w5-Q6-JxO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gTm-wm-CCy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="982" y="1095"/>
+        </scene>
     </scenes>
     <resources>
-        <image name="dino" width="550" height="583"/>
         <image name="logo" width="546" height="93"/>
     </resources>
 </document>

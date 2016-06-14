@@ -29,7 +29,5 @@ class MoviesCell: UITableViewCell {
         urlLabel.text = movie.url
         movieImg.image = DataService.instance.imageForPath(movie.imagePath)
     }
-    
-    
 
 }
